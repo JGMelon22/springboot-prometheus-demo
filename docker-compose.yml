@@ -1,0 +1,36 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus-java
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-java
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    networks:
+      - monitoring
+
+  custom-metrics-springboot:
+    build:
+      context: .
+    container_name: custom-metrics-springboot
+    #    volumes:
+    #      -
+    ports:
+      - "8080:8080"
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge

@@ -10,7 +10,7 @@ services:
       - monitoring
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana-oss:12.2.0-17055924271
     container_name: grafana-java
     ports:
       - "3000:3000"
@@ -24,8 +24,6 @@ services:
     build:
       context: .
     container_name: custom-metrics-springboot
-    #    volumes:
-    #      -
     ports:
       - "8080:8080"
     networks:

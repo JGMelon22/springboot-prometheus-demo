@@ -4,11 +4,13 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.jgmelon22.prometheus_example.dto.ProductDto;
 import com.jgmelon22.prometheus_example.model.Product;
 import com.jgmelon22.prometheus_example.repository.ProductRepository;
 
+@Service
 public class ProductService {
  @Autowired
     private ProductRepository productRepository;

@@ -82,36 +82,10 @@ This will start three services:
 
 ### 4. Access the Services
 
-- **Application API**: http://localhost:8080/api/products
-- **Actuator Endpoints**: http://localhost:8080/actuator
+- **Application Swagger UI**: http://localhost:8080/swagger-ui/index.html
 - **Prometheus Metrics**: http://localhost:8080/actuator/prometheus
 - **Prometheus UI**: http://localhost:9090
 - **Grafana Dashboard**: http://localhost:3000 (default credentials: admin/admin)
-
-### 5. Test the API
-
-You can test the Product API using curl:
-
-```bash
-# Get all products
-curl http://localhost:8080/api/products
-
-# Get a product by ID
-curl http://localhost:8080/api/products/1
-
-# Create a new product
-curl -X POST http://localhost:8080/api/products \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Sample Product","price":99.99,"description":"A sample product"}'
-
-# Update a product
-curl -X PUT http://localhost:8080/api/products/1 \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Updated Product","price":149.99,"description":"Updated description"}'
-
-# Delete a product
-curl -X DELETE http://localhost:8080/api/products/1
-```
 
 ## Configuration
 

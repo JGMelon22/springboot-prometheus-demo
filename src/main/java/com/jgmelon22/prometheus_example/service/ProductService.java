@@ -12,7 +12,7 @@ import com.jgmelon22.prometheus_example.repository.ProductRepository;
 
 @Service
 public class ProductService {
- @Autowired
+    @Autowired
     private ProductRepository productRepository;
 
     public Iterable<Product> getAllProducts() {
@@ -23,13 +23,15 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public Product saveProduct(Product product) {
+    public Product saveProduct(ProductDto productDto) {
+        Product product = new Product();
+        BeanUtils.copyProperties(productDto, product);
         return productRepository.save(product);
     }
 
     public Product updateProduct(Long id, ProductDto productDetails) {
         Product product = productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
-        BeanUtils.copyProperties(productDetails, product); 
+        BeanUtils.copyProperties(productDetails, product);
         return productRepository.save(product);
     }
 

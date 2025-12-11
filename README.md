@@ -198,5 +198,5 @@ Consider importing these community dashboards:
 - [Prometheus Documentation](https://prometheus.io/docs/)
 - [Grafana Documentation](https://grafana.com/docs/)
 - [Micrometer Documentation](https://micrometer.io/docs)
-- [Micrometer Documentation]Building a CRUD Application with Spring Boot and REST API)
+- [Building a CRUD Application with Spring Boot and REST API](https://medium.com/@akademixs247/building-a-crud-application-with-spring-boot-and-rest-api-bb8a1e22c37f)
 - [Monitoring Made Simple: Empowering Spring Boot Applications with Prometheus and Grafana](https://medium.com/simform-engineering/revolutionize-monitoring-empowering-spring-boot-applications-with-prometheus-and-grafana-e99c5c7248cf)
